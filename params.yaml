@@ -1,0 +1,12 @@
+preprocess:
+    input : data/raw/age_blood_pressure.csv
+    input1 : data/raw/age_diabetes.csv
+    output : data/preprocessed/age_blood_presure1.csv
+    output1 : data/preprocessed/age_diabetess1.csv
+
+train:
+    data1 : data/preprocesssed/age_blood_presure1.csv
+    data2 : data/preprocessed/age_diabetess1.csv
+    model1 : models/model(disabtes).pkl
+    model2 : models/model(blood_pressure).pkl
+      
