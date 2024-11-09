@@ -6,7 +6,8 @@ preprocess:
 
 train:
     data1 : data/preprocesssed/age_blood_presure1.csv
-    data2 : data/preprocessed/age_diabetess1.csv
-    model1 : models/model(disabtes).pkl
     model2 : models/model(blood_pressure).pkl
+train2:
+    data2  : data/preprocessed/age_diabetess1.csv
+    model3 :  models/model(disabtes).pkl   
       
