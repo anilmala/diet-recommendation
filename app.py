@@ -1,16 +1,6 @@
-import pandas as pd
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-wcss=[]
+import joblib
+# Load the model from the specified location
+loaded_model = joblib.load("models/blood1.joblib")
 
-data=pd.read_csv("data/preprocessed/age_diabetess1.csv")
-for i in range(1, 11):
-    kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=42)
-    kmeans.fit(data)
-    wcss.append(kmeans.inertia_)
-
-plt.plot(range(1, 11), wcss)
-plt.title('Elbow Method For Optimal k')
-plt.xlabel('Number of Clusters')
-plt.ylabel('WCSS')
-plt.show()
+# Use the loaded model for predictions
+print(loaded_model.predict([[2, 2]]))  # Example prediction

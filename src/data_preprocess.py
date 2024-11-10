@@ -9,8 +9,8 @@ params=yaml.safe_load(open('params.yaml'))["preprocess"]
 sc=StandardScaler()
 
 def preprocess(input,input1,output,output1):
-    data=pd.read_csv(input)
-    data1=pd.read_csv(input1)
+    data=pd.read_csv(input,index_col=None)
+    data1=pd.read_csv(input1,index_col=None)
     data=sc.fit_transform(data)
     data1=sc.fit_transform(data1)
     data=pd.DataFrame(data,columns=["age","blood_pressure"])
