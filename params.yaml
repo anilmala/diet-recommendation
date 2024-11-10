@@ -9,5 +9,10 @@ train:
     model2 : models/model(blood_pressure).pkl
 train2:
     data2  : data/preprocessed/age_diabetess1.csv
-    model3 :  models/model(disabtes).pkl   
+    model3 :  models/model(disabtes).pkl     
+
+train3:
+    onetwo : data1/group/diabetes.csv
+    onethreee : data1/group/blood_pressure.csv
+
       

@@ -1,34 +1,35 @@
+from yaml import safe_load
+import yaml
 from sklearn.cluster import KMeans
 import pandas as pd
-import pickle
-from yaml import safe_load
+import numpy as np
+import matplotlib.pyplot as plt 
 import os
+import pickle
 import joblib
-# Load parameters from params.yaml
-params = safe_load(open("params.yaml"))["train"]
-params1 = safe_load(open("params.yaml"))["train2"]
 
-def train_kmeans(data_path, n_clusters, model_path):
-    
-    data = pd.read_csv("data/preprocessed/age_blood_presure1.csv")
+params=yaml.safe_load(open('params.yaml'))["train3"]
 
-    # Train KMeans model
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
-    kmeans.fit(data)
-    joblib.dump(kmeans, "models/blood_pressure_model")
-
-    
-    
-    
-    # Predict clusters for the data and add to the DataFrame
-    data["cluster"] = kmeans.predict(data)
-    return data
+def predictdata(model_path,data_path):
+    data=pd.read_csv("data/preprocessed/age_blood_presure1.csv")
+    model=joblib.load("models/blood1.joblib")
+    os.makedirs(os.path.dirname(data_path),exist_ok=True)
+    data["cluster"]=model.predict(data)
+    data.to_csv(data_path)
+if __name__=="__main__":
+    predictdata(params["onetwo"],params["onethreee"])    
 
 
-if __name__ == "__main__":
-    # Train the model and save it
-    data = train_kmeans(params["data1"], n_clusters=3, model_path=params["model2"])
-    print(data.head())  # Show a preview of the data with clusters
-    
-    # Predict clusters using the saved model
-  
+
+def predictdata1(model_path,data_path):
+    data=pd.read_csv("data/preprocessed/age_diabetess1.csv")
+    model=joblib.load("models/diabetes.joblib")
+    os.makedirs(os.path.dirname(data_path),exist_ok=True)
+    data["cluster"]=model.predict(data)
+    data.to_csv(data_path)
+if __name__=="__main__":
+    predictdata(params["onethreee"],params["onetwo"])    
+
+
+
+
