@@ -24,7 +24,7 @@ plt.show()
 # Plot the Elbow graph to determine the number of clusters
 def train(preprocessed_data_path,model_path):
     data=pd.read_csv("data/preprocessed/age_blood_presure1.csv")
-    kmeans = KMeans(n_clusters=4, init='k-means++', max_iter=300, n_init=10, random_state=42)
+    kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=300, n_init=10, random_state=42)
     data["clusters"]=kmeans.fit_predict(data)
     model=os.makedirs(os.path.dirname(model_path),exist_ok=True)
     filename=os.path.dirname(model_path)
@@ -38,8 +38,8 @@ if __name__=="__main__":
 params1=safe_load(open("params.yaml"))["train2"]
 def train1(preprocessed_data_path,model_path):
     data=pd.read_csv("data/preprocessed/age_diabetess1.csv")
-    kmeans1 = KMeans(n_clusters=3, init='k-means++', max_iter=300, n_init=10, random_state=42)
-    data["clusters"]=kmeans.fit_predict(data)
+    kmeans1 = KMeans(n_clusters=4, init='k-means++', max_iter=300, n_init=10, random_state=42)
+    data["clusters"]=kmeans1.fit_predict(data)
     model=os.makedirs(os.path.dirname(model_path),exist_ok=True)
     filename=os.path.dirname(model_path)
     model_path1 = os.path.join(filename, "diabetes.joblib")

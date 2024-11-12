@@ -12,7 +12,7 @@ train2:
     model3 :  models/model(disabtes).pkl     
 
 train3:
-    onetwo : data1/group/diabetes.csv
-    onethreee : data1/group/blood_pressure.csv
+    diabetes : data1/group/diabetes.csv
+    bloodpressure : data1/group/blood_pressure.csv
 
       
