@@ -46,11 +46,11 @@ def checkdiabetesgoodorbad(data1, data2):
     
     # Categorize the diabetes value
     if deviation_in_sd <= 1:
-        print("The Diabetes level is normal.")
+        return ("The Diabetes level is normal.")
     elif deviation_in_sd <= 2:
-        print("The Diabetes level is slightly high; you may need a diet.")
+        return ("The Diabetes level is slightly high; you may need a diet.")
     else:
-        print("The Diabetes level is too high; you should follow a strict diet.")
+        return ("The Diabetes level is too high; you should follow a strict diet.")
         
 
 # Example usage
@@ -78,11 +78,11 @@ def bloodpressuregoodorbad(data1, data2):
     
     # Categorize the diabetes value
     if deviation_in_sd <= 1:
-        print("The bp level is normal.")
+        return ("The bp level is normal.")
     elif deviation_in_sd <= 2:
-        print("The bp level is slightly high; you may need a diet.")
+        return ("The bp level is slightly high; you may need a diet.")
     else:
-        print("The bp level is too high; you should follow a strict diet.")
+        return ("The bp level is too high; you should follow a strict diet.")
 
 
 
@@ -116,7 +116,7 @@ def dietbp(value):
        'Night Meal', 'Calories', 'Protein (g)', 'Carbohydrates (g)',
        'Fats (g)', 'Fiber (g)']])
 
-dietbp(100)
+
     
 
 
