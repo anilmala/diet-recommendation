@@ -19,9 +19,29 @@ This project provides a personalized diet recommendation system for individuals 
 
 ## Installation
 
-To run the project locally, follow the steps below:
+Follow the instructions below to set up and run the project locally:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/anilmala/diet-recommendation.git
+### 1. Clone the repository:
+```bash
+git clone https://github.com/anilmala/diet-recommendation.git
+cd diet-recommendation
 
+### 2. Install the required dependencies:
+To install the required dependencies, create a virtual environment (recommended) and install all the packages listed in the requirements.txt file:
+```bash
+pip install -r requirements.txt
+
+### 3. Run the Streamlit app:
+Once the dependencies are installed, you can run the Streamlit app locally:
+```bash
+streamlit run app.py
+
+## Contribution
+Feel free to fork this repository and submit pull requests. For any issues or suggestions, open a GitHub issue, and we’ll address it promptly.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+Scikit-learn for clustering techniques.
+Streamlit for creating the interactive app.
